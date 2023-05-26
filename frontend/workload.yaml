@@ -1,0 +1,26 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: frontend
+  namespace: sam
+  labels:
+    app.kubernetes.io/part-of: gateway-reference
+    apps.tanzu.vmware.com/workload-type: server
+spec:
+  build:
+    env:
+      - name: BP_NODE_RUN_SCRIPTS
+        value: build
+      - name: BP_WEB_SERVER
+        value: nginx
+      - name: BP_WEB_SERVER_ROOT
+        value: dist
+      - name: BP_NGINX_STUB_STATUS_PORT
+        value: "8081"
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/p-ssanders/gateway-reference-system.git
+    subPath: frontend
+

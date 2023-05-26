@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: backend
+  description: Gateway Reference Backend
+  annotations:
+    backstage.io/kubernetes-label-selector: "app=backend"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: sam
+  system: gateway-reference

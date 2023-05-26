@@ -2,10 +2,10 @@
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGateway
 metadata:
-  name: sparta-gateway
-  namespace: sparta
-  labels:
-    app.kubernetes.io/part-of: sparta
+  name: gateway
+  namespace: sam
+  # labels:
+  #   app.kubernetes.io/part-of: sam
 spec:
   count: 1
   service:

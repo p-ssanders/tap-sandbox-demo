@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: frontend
+  description: Gateway Reference Frontend
+  annotations:
+    backstage.io/kubernetes-label-selector: "app=frontend"
+spec:
+  type: service
+  lifecycle: experimental
+  owner: sam
+  system: gateway-reference

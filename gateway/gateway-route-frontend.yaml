@@ -2,13 +2,13 @@
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayRouteConfig
 metadata:
-  name: sparta-frontend
-  namespace: sparta
-  labels:
-    app.kubernetes.io/part-of: sparta
+  name: frontend
+  namespace: sam
 spec:
   routes:
     - order: 1
       predicates:
         - Path=/**
-      uri: "http://sparta-frontend:8080"
+      uri: "http://frontend:8080"
+      filters:
+      - StripPrefix=0
