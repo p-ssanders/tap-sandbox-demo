@@ -1,0 +1,12 @@
+apiVersion: "tanzu.vmware.com/v1"
+kind: SpringCloudGatewayMapping
+metadata:
+  name: sparta-backend
+  namespace: sparta
+  labels:
+    app.kubernetes.io/part-of: sparta
+spec:
+  gatewayRef:
+    name: sparta-gateway
+  routeConfigRef:
+    name: sparta-backend
