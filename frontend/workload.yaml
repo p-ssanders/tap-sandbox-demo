@@ -17,6 +17,9 @@ spec:
         value: dist
       - name: BP_NGINX_STUB_STATUS_PORT
         value: "8081"
+  env:
+    - name: PORT
+      value: 8080
   source:
     git:
       ref:
