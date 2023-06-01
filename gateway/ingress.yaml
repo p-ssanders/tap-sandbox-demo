@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo
+  namespace: sam
+  annotations:
+    cert-manager.io/cluster-issuer: zerossl-prod
+spec:
+  tls:
+  - hosts:
+      - demo.tap-whole-tadpole.tapsandbox.com
+    secretName: demo-cert
+  rules:
+  - host: demo.tap-whole-tadpole.tapsandbox.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: gateway
+            port:
+              number: 80
