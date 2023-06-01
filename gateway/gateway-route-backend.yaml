@@ -10,5 +10,3 @@ spec:
       predicates:
         - Path=/api/**
       uri: "http://backend:8080"
-      filters:
-      - StripPrefix=0
