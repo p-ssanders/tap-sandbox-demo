@@ -1,0 +1,1 @@
+tanzu service class-claim create backend-postgres --class postgresql-unmanaged --parameter storageGB=1 -n sam

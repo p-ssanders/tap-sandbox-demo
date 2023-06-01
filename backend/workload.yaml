@@ -17,9 +17,9 @@ spec:
         branch: main
       url: https://github.com/p-ssanders/gateway-reference-system.git
     subPath: backend
-#  serviceClaims:
-#    - name: postgres
-#      ref:
-#        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
-#        kind: ResourceClaim
-#        name: postgres-demo
+  serviceClaims:
+    - name: postgres
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ClassClaim
+        name: backend-postgres
